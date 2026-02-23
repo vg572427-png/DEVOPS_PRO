@@ -1,10 +1,10 @@
-# Use OpenJDK as base image
-FROM openjdk:21-jdk
+# Use an existing OpenJDK image that exists
+FROM openjdk:21-jdk-slim
 
 # Set working directory inside container
 WORKDIR /app
 
-# Copy Maven built jar from target folder
+# Copy Maven-built jar from target folder
 COPY target/demo-app-1.0-SNAPSHOT.jar app.jar
 
 # Expose port if your app uses one (optional)
